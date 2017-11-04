@@ -80,6 +80,10 @@ public class ContentFragment extends BaseFragment {
 
     }
 
+    public NewsCenterPager getNewsCenterPager() {
+        return (NewsCenterPager) basePagers.get(1);
+    }
+
     /**
      * viewPager 监听器  主要用于监听页面发生改变时加载数据 获取数据到页面
      */

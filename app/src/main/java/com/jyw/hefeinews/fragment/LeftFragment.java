@@ -12,6 +12,7 @@ import com.jyw.hefeinews.R;
 import com.jyw.hefeinews.activity.MainActivity;
 import com.jyw.hefeinews.base.BaseFragment;
 import com.jyw.hefeinews.domain.NewsCenterPagerBean;
+import com.jyw.hefeinews.pager.NewsCenterPager;
 import com.jyw.hefeinews.utils.DensityUtil;
 import com.jyw.hefeinews.utils.LogUtils;
 
@@ -44,10 +45,23 @@ public class LeftFragment extends BaseFragment {
                 adapter.notifyDataSetChanged();//刷新适配器
                 MainActivity activity = (MainActivity) LeftFragment.this.context;
                 activity.getSlidingMenu().toggle();//如果侧滑开着，我就关掉，如果关掉的我就打开
+                switchPager(prePosition);
+
+
             }
         });
 
         return listView;
+    }
+
+    private void switchPager(int position) {
+        MainActivity activity = (MainActivity) LeftFragment.this.context;
+        //获取内容fragment  通过获取内容Fragment
+        ContentFragment contentFragment=activity.getContentFragment();
+        //获取新闻中心界面 切换器相应的子页面
+        NewsCenterPager newsCenterPager=contentFragment.getNewsCenterPager();
+        //选择相应的页面进行显示
+        newsCenterPager.switchPager(position);
     }
 
     @Override
@@ -66,6 +80,7 @@ public class LeftFragment extends BaseFragment {
         adapter= new leftMenuFragmentAdapter();
         listView.setAdapter(adapter);
         LogUtils.e("listview 设置适配器了-------------");
+        switchPager(prePosition);
     }
 
     /**
