@@ -3,6 +3,7 @@ package com.jyw.hefeinews.pager;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -35,6 +36,17 @@ public class NewsCenterPager extends BasePager {
     @Override
     public void initData() {
         super.initData();
+        ib_menu.setVisibility(View.VISIBLE);
+
+        //设置点击图片使得侧滑关闭或者打开
+        ib_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity activity = (MainActivity) NewsCenterPager.this.context;
+                activity.getSlidingMenu().toggle();
+            }
+        });
+
         LogUtil.e("新闻中心数据被初始化了");
         tv_title.setText("新闻中心");
         TextView textView=new TextView(context);
