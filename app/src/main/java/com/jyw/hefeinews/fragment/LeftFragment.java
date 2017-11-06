@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.jyw.hefeinews.R;
 import com.jyw.hefeinews.activity.MainActivity;
 import com.jyw.hefeinews.base.BaseFragment;
-import com.jyw.hefeinews.domain.NewsCenterPagerBean;
+import com.jyw.hefeinews.domain.NewsCenterPagerBean2;
 import com.jyw.hefeinews.pager.NewsCenterPager;
 import com.jyw.hefeinews.utils.DensityUtil;
 import com.jyw.hefeinews.utils.LogUtils;
@@ -24,7 +24,7 @@ import java.util.List;
 
 public class LeftFragment extends BaseFragment {
     private ListView listView;
-    private List<NewsCenterPagerBean.DataBean> data;
+    private List<NewsCenterPagerBean2.DataBean> data;
     private int prePosition;//上一次点击的位置
     private leftMenuFragmentAdapter adapter;
 
@@ -71,10 +71,10 @@ public class LeftFragment extends BaseFragment {
 
     }
 
-    public void setData(List<NewsCenterPagerBean.DataBean> data) {
+    public void setData(List<NewsCenterPagerBean2.DataBean> data) {
         this.data=data;
 //        LogUtil
-        for(NewsCenterPagerBean.DataBean dataBean: data){
+        for(NewsCenterPagerBean2.DataBean dataBean: data){
             LogUtils.e("标题：=="+dataBean.getTitle());
         }
         adapter= new leftMenuFragmentAdapter();

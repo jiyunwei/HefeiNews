@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 import com.jyw.hefeinews.activity.MainActivity;
 import com.jyw.hefeinews.base.BasePager;
 import com.jyw.hefeinews.base.MenuDatailBasePager;
-import com.jyw.hefeinews.domain.NewsCenterPagerBean;
+import com.jyw.hefeinews.domain.NewsCenterPagerBean2;
 import com.jyw.hefeinews.fragment.LeftFragment;
 import com.jyw.hefeinews.menudetailpager.InteracMenuDetailPager;
 import com.jyw.hefeinews.menudetailpager.NewsMenuDetailPager;
@@ -36,7 +36,7 @@ public class NewsCenterPager extends BasePager {
     /**
      * 请求json返回的data数据
      */
-    private List<NewsCenterPagerBean.DataBean> data;
+    private List<NewsCenterPagerBean2.DataBean> data;
     /**
      * 新闻详情页面的各个子页面集合
      */
@@ -109,7 +109,7 @@ public class NewsCenterPager extends BasePager {
      * @param json
      */
     private void processData(String json) {
-        NewsCenterPagerBean bean=parsedJson(json);
+        NewsCenterPagerBean2 bean=parsedJson(json);
         data = bean.getData();
         MainActivity mainActivity = (MainActivity)context;
         LeftFragment leftFragment = mainActivity.getLeftMenuFragment();
@@ -128,12 +128,12 @@ public class NewsCenterPager extends BasePager {
      * 解析json数据   使用系统的api解析json  2.使用第三方框架 解析json  例如Gson fastJson
      * @param json
      */
-    private NewsCenterPagerBean parsedJson(String json) {
+    private NewsCenterPagerBean2 parsedJson(String json) {
 //        Gson gson=new Gson();
 //        NewsCenterPagerBean bean = gson.fromJson(json,
 //                NewsCenterPagerBean.class);
 
-        return new Gson().fromJson(json,NewsCenterPagerBean.class);
+        return new Gson().fromJson(json,NewsCenterPagerBean2.class);
     }
 
     /**
