@@ -3,6 +3,8 @@ package com.jyw.hefeinews.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.jyw.hefeinews.SplashActivity;
+
 /**
  * Created by pc on 2017/10/20.
  */
@@ -17,5 +19,17 @@ public class CacheUtils {
     public static void putBoolean(Context  context, String key, boolean value) {
         SharedPreferences sp=context.getSharedPreferences(key,context.MODE_PRIVATE);
         sp.edit().putBoolean(key,value).commit();
+    }
+    //联网成功之后，把得到的json数据存储到缓存中
+    public static void putString(Context context, String key, String value) {
+        SharedPreferences sp=context.getSharedPreferences(SplashActivity.START_MAIN,context.MODE_PRIVATE);
+        sp.edit().putString(key,value).commit();
+    }
+
+    //拿到之前联网时缓存的数据
+    public static String getString(Context context, String key) {
+
+        SharedPreferences sp=context.getSharedPreferences(SplashActivity.START_MAIN,context.MODE_PRIVATE);
+        return sp.getString(key,"");
     }
 }

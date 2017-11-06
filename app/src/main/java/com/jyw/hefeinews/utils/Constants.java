@@ -6,6 +6,6 @@ package com.jyw.hefeinews.utils;
  */
 
 public class Constants {
-    public static final String base_url="http://192.168.56.1:8080/web_home";
-    public static final String newscenter_pager_url=base_url+"/static/api/news/categories.json";
+    public static final String BASE_URL="http://192.168.56.1:8080/web_home";
+    public static final String NEWSCENTER_PAGER_URL=BASE_URL+"/static/api/news/categories.json";
 }

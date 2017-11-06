@@ -2,6 +2,7 @@ package com.jyw.hefeinews.pager;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ import com.jyw.hefeinews.menudetailpager.InteracMenuDetailPager;
 import com.jyw.hefeinews.menudetailpager.NewsMenuDetailPager;
 import com.jyw.hefeinews.menudetailpager.PhotosMenuDetailPager;
 import com.jyw.hefeinews.menudetailpager.TopicMenuDetailPager;
+import com.jyw.hefeinews.utils.CacheUtils;
 import com.jyw.hefeinews.utils.Constants;
 
 import org.xutils.common.Callback;
@@ -69,6 +71,13 @@ public class NewsCenterPager extends BasePager {
         textView.setGravity(Gravity.CENTER);
         fl_content.addView(textView);
         textView.setText("新闻中心内容");
+
+        String dataResult = CacheUtils.getString(context,Constants.NEWSCENTER_PAGER_URL);
+        if(!TextUtils.isEmpty(dataResult)){
+            //如果之前有缓存数据先从缓存数据当中进行解析显示，
+            // 这样即使网络无链接也能正常显示页面的内容
+            processData(dataResult);
+        }
         //联网请求数据
         getDataFromNet();
 
@@ -78,11 +87,13 @@ public class NewsCenterPager extends BasePager {
      * 使用xUtils 联网解析数据
      */
     public void getDataFromNet() {
-        RequestParams params= new RequestParams(Constants.newscenter_pager_url);
+        RequestParams params= new RequestParams(Constants.NEWSCENTER_PAGER_URL);
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 LogUtil.e("使用xUtils联网请求成功"+result);
+                //联网请求的result数据存到缓存当中
+                CacheUtils.putString(context,Constants.NEWSCENTER_PAGER_URL,result);
                 processData(result);
 
             }
