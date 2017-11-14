@@ -126,7 +126,7 @@ public class NewsCenterPager extends BasePager {
         LeftFragment leftFragment = mainActivity.getLeftMenuFragment();
 
         datailBasePagers=new ArrayList<MenuDatailBasePager>();
-        datailBasePagers.add(new NewsMenuDetailPager(context));
+        datailBasePagers.add(new NewsMenuDetailPager(context,data.get(0)));
         datailBasePagers.add(new TopicMenuDetailPager(context));
         datailBasePagers.add(new PhotosMenuDetailPager(context));
         datailBasePagers.add(new InteracMenuDetailPager(context));

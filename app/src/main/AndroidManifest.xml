@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.jyw.hefeinews">
+
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:name=".HefeiNewsApplication"
         android:allowBackup="true"
@@ -19,7 +21,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.GuideActivity"/>
-        <activity android:name=".activity.MainActivity">
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/Theme.PageIndicatorDefaults"
+            >
         </activity>
     </application>
 

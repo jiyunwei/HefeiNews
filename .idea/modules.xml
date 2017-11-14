@@ -3,8 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HefeiNews.iml" filepath="$PROJECT_DIR$/HefeiNews.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Indicator_library/Indicator_library.iml" filepath="$PROJECT_DIR$/Indicator_library/Indicator_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Indicator_sample/Indicator_sample.iml" filepath="$PROJECT_DIR$/Indicator_sample/Indicator_sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/SlidingMenu_library/SlidingMenu_library.iml" filepath="$PROJECT_DIR$/SlidingMenu_library/SlidingMenu_library.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewpagerinditor_sample/viewpagerinditor_sample.iml" filepath="$PROJECT_DIR$/viewpagerinditor_sample/viewpagerinditor_sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/xUtils3_sample/xUtils3_sample.iml" filepath="$PROJECT_DIR$/xUtils3_sample/xUtils3_sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/xutils/xutils.iml" filepath="$PROJECT_DIR$/xutils/xutils.iml" />
     </modules>
